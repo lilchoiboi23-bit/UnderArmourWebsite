@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Armour</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="utility-bar" aria-label="Utility navigation">
+        <a href="#">Find a Store</a>
+        <span aria-hidden="true">|</span>
+        <a href="#">Help</a>
+        <span aria-hidden="true">|</span>
+        <a href="#">Join Us</a>
+        <span aria-hidden="true">|</span>
+        <a href="#">Sign In</a>
+      </div>
+
+      <div class="main-nav">
+        <a class="brand" href="#" aria-label="Under Armour home">
+          <span class="brand-mark">UA</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#new">New & Featured</a>
+          <a href="#men">Men</a>
+          <a href="#women">Women</a>
+          <a href="#kids">Kids</a>
+          <a href="#sport">Sport</a>
+          <a href="#sale">Sale</a>
+        </nav>
+
+        <div class="nav-actions">
+          <label class="search-pill">
+            <span aria-hidden="true">Search</span>
+            <input type="search" aria-label="Search products" />
+          </label>
+          <a class="icon-link" href="#" aria-label="Wishlist">♡</a>
+          <a class="icon-link" href="#" aria-label="Bag">Bag</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="promo-strip" aria-label="Promotion">
+        <p>Free delivery on orders over $75</p>
+        <a href="#new">Shop new arrivals</a>
+      </section>
+
+      <section class="hero" id="new" aria-labelledby="page-title">
+        <div class="hero-image" aria-hidden="true"></div>
+      </section>
+
+      <section class="campaign-copy" aria-labelledby="page-title">
+        <p class="kicker">Built for the work</p>
+        <h1 id="page-title">Under Armour</h1>
+        <p>
+          Training gear, running shoes, and performance layers made to keep up
+          when the pace gets serious.
+        </p>
+        <div class="button-row">
+          <a class="button button-dark" href="#men">Shop Men</a>
+          <a class="button button-dark" href="#women">Shop Women</a>
+        </div>
+      </section>
+
+      <section class="feature-section" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <h2 id="featured-title">Featured</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-card-dark" id="men">
+            <div class="feature-media media-training" aria-hidden="true"></div>
+            <div class="feature-content">
+              <p>New season essentials</p>
+              <h3>Train hard. Stay ready.</h3>
+              <a class="button button-light" href="#gear">Shop Training</a>
+            </div>
+          </article>
+
+          <article class="feature-card" id="women">
+            <div class="feature-media media-running" aria-hidden="true"></div>
+            <div class="feature-content">
+              <p>Performance layers</p>
+              <h3>Made for every move.</h3>
+              <a class="button button-light" href="#gear">Shop Apparel</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sport-section" id="sport" aria-labelledby="sport-title">
+        <div class="section-heading">
+          <h2 id="sport-title">Shop by Sport</h2>
+        </div>
+
+        <div class="sport-scroller">
+          <a class="sport-card sport-basketball" href="#gear">
+            <span>Shop Basketball</span>
+          </a>
+          <a class="sport-card sport-training" href="#gear">
+            <span>Shop Training</span>
+          </a>
+          <a class="sport-card sport-running" href="#gear">
+            <span>Shop Running</span>
+          </a>
+          <a class="sport-card sport-football" href="#gear">
+            <span>Shop Football</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="gear-section" id="gear" aria-labelledby="gear-title">
+        <div class="section-heading">
+          <h2 id="gear-title">Trending Gear</h2>
+        </div>
+
+        <div class="gear-grid">
+          <article class="gear-card">
+            <div class="gear-visual visual-shoe" aria-hidden="true"></div>
+            <h3>Flow Training Shoe</h3>
+            <p>Men's Training</p>
+            <strong>$120</strong>
+          </article>
+          <article class="gear-card">
+            <div class="gear-visual visual-hoodie" aria-hidden="true"></div>
+            <h3>Armour Fleece Hoodie</h3>
+            <p>Unisex Hoodie</p>
+            <strong>$85</strong>
+          </article>
+          <article class="gear-card">
+            <div class="gear-visual visual-tee" aria-hidden="true"></div>
+            <h3>Iso-Chill Training Top</h3>
+            <p>Women's Training</p>
+            <strong>$55</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="spotlight-section" id="kids" aria-labelledby="spotlight-title">
+        <div class="spotlight-copy">
+          <p class="kicker">Spotlight</p>
+          <h2 id="spotlight-title">Classic performance. Modern edge.</h2>
+          <p>
+            Everyday silhouettes and technical gear designed for the gym, the
+            field, and the rest of the day.
+          </p>
+        </div>
+        <div class="spotlight-links">
+          <a href="#gear">HeatGear</a>
+          <a href="#gear">HOVR</a>
+          <a href="#gear">Flow</a>
+          <a href="#gear">Fleece</a>
+          <a href="#gear">Backpacks</a>
+          <a href="#gear">Compression</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="sale">
+      <div>
+        <h2>Under Armour</h2>
+        <p>Homepage concept using Nike's retail layout as a reference.</p>
+      </div>
+
+      <nav aria-label="Footer featured links">
+        <h3>Featured</h3>
+        <a href="#new">New Arrivals</a>
+        <a href="#gear">Best Sellers</a>
+        <a href="#sport">Training Gear</a>
+        <a href="#sale">Sale</a>
+      </nav>
+
+      <nav aria-label="Footer shopping links">
+        <h3>Shop</h3>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#kids">Kids</a>
+        <a href="#sport">Sport</a>
+      </nav>
+
+      <nav aria-label="Footer support links">
+        <h3>Support</h3>
+        <a href="#">Order Status</a>
+        <a href="#">Dispatch & Delivery</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact Us</a>
+      </nav>
+    </footer>
+  </body>
+</html>
