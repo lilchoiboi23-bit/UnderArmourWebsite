@@ -26,6 +26,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body.product-page {
+  background: #fbfbfb;
+}
+
+body.utility-page {
+  background:
+    radial-gradient(circle at top left, rgba(215, 161, 60, 0.12), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -163,10 +173,19 @@ a {
 }
 
 .hero-image {
+  position: relative;
   min-height: clamp(440px, 63vw, 780px);
-  background-image: url("assets/steph-curry-under-armour.jpg");
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
+  background: #050505 url("assets/steph-curry-under-armour.jpg") center / cover;
+}
+
+.hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .campaign-copy {
@@ -193,8 +212,7 @@ a {
   text-transform: uppercase;
 }
 
-.campaign-copy p:not(.kicker),
-.spotlight-copy p:not(.kicker) {
+.campaign-copy p:not(.kicker) {
   max-width: 610px;
   margin: 0;
   color: var(--ink);
@@ -246,8 +264,7 @@ a {
 
 .feature-section,
 .sport-section,
-.gear-section,
-.spotlight-section {
+.gear-section {
   width: min(100% - 72px, 1780px);
   margin: 0 auto;
   padding: 22px 0 58px;
@@ -292,12 +309,14 @@ a {
 }
 
 .media-training {
-  background-position: 55% center;
+  background-image: url("assets/stephen-curry-teamusa-basketball.jpg");
+  background-position: 58% center;
 }
 
 .media-running {
-  background-position: 76% center;
-  filter: saturate(0.9) contrast(1.08);
+  background-image: url("assets/steph-curry-under-armour.jpg");
+  background-position: 62% center;
+  filter: saturate(0.95) contrast(1.06);
 }
 
 .feature-card::after {
@@ -376,25 +395,20 @@ a {
 }
 
 .sport-training {
-  background-image: url("assets/hero-training.png");
+  background-image: url("assets/under-armour-shirt.jpg");
   background-position: 58% center;
 }
 
 .sport-running {
   background-image:
-    linear-gradient(135deg, rgba(38, 84, 201, 0.72), rgba(5, 5, 5, 0.2)),
-    url("assets/hero-training.png");
-  background-position: 78% center;
+    linear-gradient(135deg, rgba(38, 84, 201, 0.62), rgba(5, 5, 5, 0.18)),
+    url("assets/steph-curry-under-armour.jpg");
+  background-position: 68% center;
 }
 
 .sport-basketball {
   background-image: url("assets/stephen-curry-teamusa-basketball.jpg");
   background-position: 42% center;
-}
-
-.sport-football {
-  background:
-    linear-gradient(135deg, var(--green), #111111 54%, var(--blue));
 }
 
 .gear-grid {
@@ -406,6 +420,25 @@ a {
 .gear-card {
   display: grid;
   gap: 8px;
+}
+
+.gear-card-link {
+  display: grid;
+  gap: 8px;
+  color: inherit;
+}
+
+.gear-card-link .gear-visual {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.gear-card-link:hover .gear-visual {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gear-card-link:hover h3 {
+  color: var(--red);
 }
 
 .gear-visual {
@@ -440,47 +473,6 @@ a {
 
 .gear-card p {
   color: var(--muted);
-}
-
-.spotlight-section {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(28px, 6vw, 86px);
-  padding-top: 56px;
-  border-top: 1px solid var(--line);
-}
-
-.spotlight-copy {
-  display: grid;
-  align-content: start;
-  gap: 14px;
-}
-
-.spotlight-copy h2 {
-  max-width: 560px;
-  margin: 0;
-  font-size: clamp(2.3rem, 6vw, 5.8rem);
-  line-height: 0.9;
-  text-transform: uppercase;
-}
-
-.spotlight-links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 48px;
-  align-content: start;
-}
-
-.spotlight-links a {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: clamp(1.5rem, 3.5vw, 3.6rem);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.spotlight-links a:hover {
-  color: var(--red);
 }
 
 .site-footer {
@@ -531,6 +523,502 @@ a {
   color: var(--white);
 }
 
+.product-hero {
+  width: min(100% - 72px, 1780px);
+  margin: 0 auto;
+  padding: 28px 0 64px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.breadcrumbs a:hover {
+  color: var(--ink);
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+}
+
+.product-gallery {
+  display: grid;
+  gap: 14px;
+}
+
+.product-image-card {
+  display: grid;
+  place-items: center;
+  min-height: clamp(560px, 64vw, 860px);
+  margin: 0;
+  padding: clamp(22px, 4vw, 48px);
+  background: linear-gradient(180deg, #ffffff, #f3f3f3);
+  border: 1px solid var(--line);
+}
+
+.product-image-card img {
+  width: min(100%, 860px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.14));
+}
+
+.product-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.thumb.active {
+  border-color: var(--black);
+  box-shadow: inset 0 0 0 1px var(--black);
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.swatch-white {
+  background: #f5f5f5;
+}
+
+.swatch-black {
+  background: #101010;
+}
+
+.swatch-gray {
+  background: #8f9499;
+}
+
+.swatch-castlerock {
+  background: #63666a;
+}
+
+.swatch-green {
+  background: #2f7d32;
+}
+
+.swatch-royal {
+  background: #1f4fd7;
+}
+
+.swatch-navy {
+  background: #182a5a;
+}
+
+.swatch-blue {
+  background: #55a8df;
+}
+
+.swatch-purple {
+  background: #6f2dbd;
+}
+
+.swatch-red {
+  background: #bc2b2b;
+}
+
+.swatch-orange {
+  background: #d8681d;
+}
+
+.product-summary {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: clamp(8px, 1vw, 16px) 0;
+}
+
+.product-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-summary h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price-sale {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 900;
+}
+
+.price-original {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-weight: 700;
+}
+
+.save-pill {
+  width: fit-content;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3ecec;
+  color: var(--red);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.product-subtitle {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.product-copy {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.product-panel {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.panel-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.swatch-row,
+.size-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip,
+.size-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip.active,
+.size-chip.active {
+  border-color: var(--black);
+  box-shadow: inset 0 0 0 1px var(--black);
+}
+
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.size-chip {
+  width: 100%;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product-actions .button {
+  flex: 1 1 180px;
+}
+
+.detail-grid {
+  width: min(100% - 72px, 1780px);
+  margin: 0 auto;
+  padding: 0 0 56px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.detail-card {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.detail-card h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+.detail-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.review-summary {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.review-score {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.review-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.utility-page-main {
+  width: min(100% - 72px, 1780px);
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.utility-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.utility-copy {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.utility-copy h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.utility-copy p {
+  margin: 0;
+  max-width: 54ch;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.utility-panel {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.utility-panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.utility-panel p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.utility-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.bag-list-card {
+  display: grid;
+  gap: 18px;
+  margin: 14px 0 14px;
+}
+
+.bag-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.bag-list-header h2,
+.bag-list-header p {
+  margin: 0;
+}
+
+.bag-empty {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  padding: 18px;
+  border: 1px dashed var(--line);
+  background: #fcfcfc;
+}
+
+.bag-items {
+  display: grid;
+  gap: 12px;
+}
+
+.bag-item {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.bag-item img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  background: #f4f4f4;
+}
+
+.bag-item h3,
+.bag-item p {
+  margin: 0;
+}
+
+.bag-item-meta {
+  display: grid;
+  gap: 6px;
+}
+
+.bag-item-actions {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.bag-remove {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--red);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.utility-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.utility-card h2,
+.utility-card h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.utility-card h2 {
+  font-size: 1.15rem;
+}
+
+.utility-card p,
+.utility-card li {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.utility-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.utility-banner {
+  display: grid;
+  gap: 10px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.96), rgba(215, 161, 60, 0.35));
+  color: var(--white);
+}
+
+.utility-banner .product-kicker {
+  color: var(--gold);
+}
+
+.utility-banner p {
+  margin: 0;
+  max-width: 54ch;
+}
+
+.utility-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.utility-actions .button {
+  flex: 1 1 180px;
+}
+
 @media (max-width: 1040px) {
   .main-nav {
     grid-template-columns: 1fr 1fr;
@@ -550,9 +1038,22 @@ a {
 
   .feature-grid,
   .gear-grid,
-  .spotlight-section,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .product-layout,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .utility-hero,
+  .utility-section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image-card {
+    min-height: 520px;
   }
 }
 
@@ -577,7 +1078,9 @@ a {
   .feature-section,
   .sport-section,
   .gear-section,
-  .spotlight-section {
+  .product-hero,
+  .detail-grid,
+  .utility-page-main {
     width: calc(100% - 28px);
   }
 
@@ -606,12 +1109,36 @@ a {
     grid-auto-columns: minmax(260px, 82vw);
   }
 
-  .spotlight-links {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
   .site-footer {
     padding-inline: 18px;
+  }
+
+  .product-image-card {
+    padding: 18px;
+    min-height: 420px;
+  }
+
+  .product-summary h1 {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+  }
+
+  .size-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-actions .button {
+    width: 100%;
+  }
+
+  .utility-actions .button {
+    width: 100%;
+  }
+
+  .bag-item {
+    grid-template-columns: 1fr;
+  }
+
+  .bag-item-actions {
+    justify-items: start;
   }
 }

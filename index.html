@@ -9,17 +9,17 @@
   <body>
     <header class="site-header">
       <div class="utility-bar" aria-label="Utility navigation">
-        <a href="#">Find a Store</a>
+        <a href="store.html">Find a Store</a>
         <span aria-hidden="true">|</span>
-        <a href="#">Help</a>
+        <a href="support.html#help">Help</a>
         <span aria-hidden="true">|</span>
-        <a href="#">Join Us</a>
+        <a href="account.html#join">Join Us</a>
         <span aria-hidden="true">|</span>
-        <a href="#">Sign In</a>
+        <a href="account.html#signin">Sign In</a>
       </div>
 
       <div class="main-nav">
-        <a class="brand" href="#" aria-label="Under Armour home">
+        <a class="brand" href="index.html" aria-label="Under Armour home">
           <img
             class="brand-mark"
             src="assets/under-armour-logo.png"
@@ -31,7 +31,7 @@
           <a href="#new">New & Featured</a>
           <a href="#men">Men</a>
           <a href="#women">Women</a>
-          <a href="#kids">Kids</a>
+          <a href="curry-12-team.html">Basketball</a>
           <a href="#sport">Sport</a>
           <a href="#sale">Sale</a>
         </nav>
@@ -41,8 +41,8 @@
             <span aria-hidden="true">Search</span>
             <input type="search" aria-label="Search products" />
           </label>
-          <a class="icon-link" href="#" aria-label="Wishlist">♡</a>
-          <a class="icon-link" href="#" aria-label="Bag">Bag</a>
+          <a class="icon-link" href="bag.html#wishlist" aria-label="Wishlist">&#9825;</a>
+          <a class="icon-link" href="bag.html#bag" aria-label="Bag">Bag</a>
         </div>
       </div>
     </header>
@@ -54,7 +54,21 @@
       </section>
 
       <section class="hero" id="new" aria-labelledby="page-title">
-        <div class="hero-image" aria-hidden="true"></div>
+        <div class="hero-image" aria-hidden="true">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/steph-curry-under-armour.jpg"
+          >
+            <source
+              src="https://underarmour.scene7.com/is/content/Underarmour/FW22_CURRY_Anthem_Attract_StoryLead_16x9_Org_30"
+              type="video/mp4"
+            />
+          </video>
+        </div>
       </section>
 
       <section class="campaign-copy" aria-labelledby="page-title">
@@ -81,7 +95,7 @@
             <div class="feature-content">
               <p>New season essentials</p>
               <h3>Train hard. Stay ready.</h3>
-              <a class="button button-light" href="#gear">Shop Training</a>
+              <a class="button button-light" href="curry-12-team.html">Shop Training</a>
             </div>
           </article>
 
@@ -90,7 +104,7 @@
             <div class="feature-content">
               <p>Performance layers</p>
               <h3>Made for every move.</h3>
-              <a class="button button-light" href="#gear">Shop Apparel</a>
+              <a class="button button-light" href="ua-tech-team.html">Shop Apparel</a>
             </div>
           </article>
         </div>
@@ -111,9 +125,6 @@
           <a class="sport-card sport-running" href="#gear">
             <span>Shop Running</span>
           </a>
-          <a class="sport-card sport-football" href="#gear">
-            <span>Shop Football</span>
-          </a>
         </div>
       </section>
 
@@ -124,44 +135,44 @@
 
         <div class="gear-grid">
           <article class="gear-card">
-            <div class="gear-visual visual-shoe" aria-hidden="true"></div>
-            <h3>Curry 12 Team</h3>
-            <p>Men's Training</p>
-            <strong>$120</strong>
+            <a
+              class="gear-card-link"
+              href="curry-12-team.html"
+              aria-label="Open Curry 12 Team product page"
+            >
+              <div class="gear-visual visual-shoe" aria-hidden="true"></div>
+              <h3>Curry 12 Team</h3>
+              <p>Men's Training</p>
+              <strong>$120</strong>
+            </a>
           </article>
           <article class="gear-card">
-            <div class="gear-visual visual-hoodie" aria-hidden="true"></div>
-            <h3>Under Armour Shirt</h3>
-            <p>Performance Shirt</p>
-            <strong>$85</strong>
+            <a
+              class="gear-card-link"
+              href="ua-tech-team.html"
+              aria-label="Open UA Tech Team product page"
+            >
+              <div class="gear-visual visual-hoodie" aria-hidden="true"></div>
+              <h3>UA Tech Team</h3>
+              <p>Performance Shirt</p>
+              <strong>$25</strong>
+            </a>
           </article>
           <article class="gear-card">
-            <div class="gear-visual visual-backpack" aria-hidden="true"></div>
-            <h3>Under Armour Backpack</h3>
-            <p>Training Backpack</p>
-            <strong>$55</strong>
+            <a
+              class="gear-card-link"
+              href="ua-no-weigh-backpack.html"
+              aria-label="Open UA No Weigh Backpack product page"
+            >
+              <div class="gear-visual visual-backpack" aria-hidden="true"></div>
+              <h3>UA No Weigh Backpack</h3>
+              <p>Training Backpack</p>
+              <strong>$150</strong>
+            </a>
           </article>
         </div>
       </section>
 
-      <section class="spotlight-section" id="kids" aria-labelledby="spotlight-title">
-        <div class="spotlight-copy">
-          <p class="kicker">Spotlight</p>
-          <h2 id="spotlight-title">Classic performance. Modern edge.</h2>
-          <p>
-            Everyday silhouettes and technical gear designed for the gym, the
-            field, and the rest of the day.
-          </p>
-        </div>
-        <div class="spotlight-links">
-          <a href="#gear">HeatGear</a>
-          <a href="#gear">HOVR</a>
-          <a href="#gear">Flow</a>
-          <a href="#gear">Fleece</a>
-          <a href="#gear">Backpacks</a>
-          <a href="#gear">Compression</a>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer" id="sale">
@@ -182,17 +193,18 @@
         <h3>Shop</h3>
         <a href="#men">Men</a>
         <a href="#women">Women</a>
-        <a href="#kids">Kids</a>
+        <a href="curry-12-team.html">Basketball</a>
         <a href="#sport">Sport</a>
       </nav>
 
       <nav aria-label="Footer support links">
         <h3>Support</h3>
-        <a href="#">Order Status</a>
-        <a href="#">Dispatch & Delivery</a>
-        <a href="#">Returns</a>
-        <a href="#">Contact Us</a>
+        <a href="support.html#order-status">Order Status</a>
+        <a href="delivery.html">Dispatch & Delivery</a>
+        <a href="support.html#returns">Returns</a>
+        <a href="support.html#contact">Contact Us</a>
       </nav>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>

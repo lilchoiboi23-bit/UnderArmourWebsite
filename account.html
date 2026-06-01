@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account | Under Armour</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="utility-page">
+    <header class="site-header">
+      <div class="utility-bar" aria-label="Utility navigation">
+        <a href="store.html">Find a Store</a>
+        <span aria-hidden="true">|</span>
+        <a href="support.html#help">Help</a>
+        <span aria-hidden="true">|</span>
+        <a href="#join">Join Us</a>
+        <span aria-hidden="true">|</span>
+        <a href="#signin">Sign In</a>
+      </div>
+      <div class="main-nav">
+        <a class="brand" href="index.html" aria-label="Under Armour home">
+          <img class="brand-mark" src="assets/under-armour-logo.png" alt="Under Armour" />
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="curry-12-team.html">Basketball</a>
+          <a href="bag.html#bag">Bag</a>
+          <a href="bag.html#wishlist">Wishlist</a>
+        </nav>
+        <div class="nav-actions">
+          <label class="search-pill">
+            <span aria-hidden="true">Search</span>
+            <input type="search" aria-label="Search products" />
+          </label>
+          <a class="icon-link" href="bag.html#wishlist" aria-label="Wishlist">&#9825;</a>
+          <a class="icon-link" href="bag.html#bag" aria-label="Bag">Bag</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="utility-page-main">
+      <section class="utility-hero">
+        <div class="utility-copy">
+          <p class="product-kicker">Account</p>
+          <h1>Sign in or join Under Armour</h1>
+          <p>
+            The Join Us and Sign In links now land on this page so the account flow
+            is always reachable.
+          </p>
+          <div class="utility-actions">
+            <a class="button button-dark" href="#signin">Sign In</a>
+            <a class="button button-light" href="#join">Join Us</a>
+          </div>
+        </div>
+        <aside class="utility-panel">
+          <h2>Account shortcuts</h2>
+          <p>Use the buttons below to jump straight to the right section.</p>
+          <div class="utility-actions">
+            <a class="button button-dark" href="#signin">Sign In</a>
+            <a class="button button-light" href="#join">Join Now</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="utility-section-grid">
+        <article class="utility-card" id="signin">
+          <h2>Sign In</h2>
+          <p>Use your email and password to access saved bags and wishlists.</p>
+          <a class="button button-dark" href="bag.html#bag">Continue to Bag</a>
+        </article>
+
+        <article class="utility-card" id="join">
+          <h2>Join Us</h2>
+          <p>Create an account for faster checkout and saved preferences.</p>
+          <a class="button button-dark" href="index.html#gear">Shop First</a>
+        </article>
+      </section>
+    </main>
+
+    <script src="site.js"></script>
+  </body>
+</html>
