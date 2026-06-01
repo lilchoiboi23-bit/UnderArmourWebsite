@@ -422,10 +422,9 @@ a {
   background: url("assets/under-armour-shirt.jpg") center / contain no-repeat #f7f7f7;
 }
 
-.visual-tee {
-  background:
-    radial-gradient(circle at 50% 22%, #fafafa 0 6%, transparent 7%),
-    linear-gradient(135deg, #111111, #777777 54%, #ffffff);
+.visual-backpack {
+  background: url("https://underarmour.scene7.com/is/image/Underarmour/6005747-418_SLF_SL?rp=standard-0pad%7Cpdp&qlt=85&bgc=f0f0f0&wid=1836&hei=1950&op_usm=1.75%2C0.3%2C2%2C0&scl=0.85&size=1500%2C1500")
+    center / contain no-repeat #f0f0f0;
 }
 
 .gear-card h3,
