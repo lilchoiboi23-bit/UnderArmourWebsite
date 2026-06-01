@@ -388,8 +388,8 @@ a {
 }
 
 .sport-basketball {
-  background:
-    linear-gradient(135deg, var(--red), #111111 52%, var(--gold));
+  background-image: url("assets/stephen-curry-teamusa-basketball.jpg");
+  background-position: 42% center;
 }
 
 .sport-football {
