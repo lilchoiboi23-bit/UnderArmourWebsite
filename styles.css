@@ -415,10 +415,7 @@ a {
 }
 
 .visual-shoe {
-  background:
-    radial-gradient(ellipse at 54% 60%, #141414 0 17%, transparent 18%),
-    radial-gradient(ellipse at 42% 48%, #ffffff 0 9%, transparent 10%),
-    linear-gradient(135deg, #e8e8e8, #bfc6cf);
+  background: url("assets/curry-12-team-shoe.jpg") center / contain no-repeat #f0f0f0;
 }
 
 .visual-hoodie {
