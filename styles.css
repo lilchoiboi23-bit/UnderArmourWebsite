@@ -65,16 +65,10 @@ a {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
   width: 46px;
-  aspect-ratio: 1;
-  color: var(--white);
-  background: var(--black);
-  border-radius: 6px;
-  font-size: 0.84rem;
-  font-weight: 900;
-  letter-spacing: 0;
+  height: 46px;
+  display: block;
+  object-fit: contain;
 }
 
 .nav-links {
