@@ -186,7 +186,7 @@ a {
   position: relative;
   min-height: clamp(440px, 63vw, 780px);
   overflow: hidden;
-  background: #050505 url("assets/steph-curry-under-armour.jpg") center / cover;
+  background: #050505;
 }
 
 .hero-video {
