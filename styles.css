@@ -36,6 +36,16 @@ body.utility-page {
     linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
 }
 
+body.event-page {
+  background:
+    radial-gradient(circle at top right, rgba(217, 23, 32, 0.22), transparent 34%),
+    linear-gradient(180deg, #111111 0%, #050505 100%);
+}
+
+body.event-page.contest-transitioning {
+  background: #050505;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -314,9 +324,9 @@ a {
 }
 
 .media-running {
-  background-image: url("assets/steph-curry-under-armour.jpg");
-  background-position: 62% center;
-  filter: saturate(0.95) contrast(1.06);
+  background-image: url("assets/made-for-every-move.webp");
+  background-position: center top;
+  filter: saturate(0.96) contrast(1.04);
 }
 
 .feature-card::after {
@@ -992,6 +1002,121 @@ a {
   padding-left: 18px;
 }
 
+.about-page-main {
+  display: grid;
+  gap: 24px;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.about-hero-panel {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+
+.about-hero-panel img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #f4f4f4;
+}
+
+.about-hero-copy {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.about-hero-copy h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.about-hero-copy p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.about-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.about-card h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.about-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.about-card-dark {
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.96), rgba(215, 161, 60, 0.14));
+  color: var(--white);
+}
+
+.about-card-dark .product-kicker,
+.about-card-dark p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about-stats {
+  display: grid;
+  gap: 14px;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.about-stat {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.about-stat strong {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 0.9;
+  font-weight: 900;
+}
+
+.about-stat span {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
 .utility-banner {
   display: grid;
   gap: 10px;
@@ -1017,6 +1142,309 @@ a {
 
 .utility-actions .button {
   flex: 1 1 180px;
+}
+
+.event-page .site-header {
+  background: rgba(5, 5, 5, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.event-page .utility-bar,
+.event-page .main-nav {
+  background: transparent;
+}
+
+.event-page .main-nav {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.event-page .nav-links a,
+.event-page .icon-link,
+.event-page .utility-bar,
+.event-page .search-pill,
+.event-page .search-pill span {
+  color: var(--white);
+}
+
+.event-page .search-pill {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.event-page .search-pill:hover,
+.event-page .icon-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.event-page .nav-links a:hover {
+  border-color: var(--white);
+}
+
+.event-page.contest-transitioning .site-header,
+.event-page.contest-transitioning .event-page-main {
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(0.985);
+  transition:
+    opacity 650ms ease,
+    filter 650ms ease,
+    transform 650ms ease;
+}
+
+.event-page.contest-transition-ready .site-header,
+.event-page.contest-transition-ready .event-page-main {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.contest-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050505;
+}
+
+.contest-transition-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center 35%, rgba(255, 255, 255, 0.06), transparent 22%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.98), rgba(0, 0, 0, 0.98));
+}
+
+.contest-transition-sheet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(72vw, 980px);
+  aspect-ratio: 4 / 3;
+  transform: translate(-50%, -50%) scale(0.985);
+  background: #f7f7f7;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  animation: contest-sheet 5000ms ease-out forwards;
+}
+
+.contest-transition-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: #f7f7f7;
+  color: #111111;
+}
+
+.contest-transition-panel {
+  position: absolute;
+  inset: 72px 0 0;
+  padding: 20px 24px 24px;
+  background: #f7f7f7;
+  color: #111111;
+}
+
+.contest-transition-panel h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.contest-transition-image {
+  display: block;
+  width: 100%;
+  height: calc(100% - 92px);
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes contest-sheet {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -44%) scale(0.965);
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -52%) scale(1.01);
+  }
+}
+
+.event-page-main {
+  width: min(100% - 72px, 1780px);
+  margin: 0 auto;
+  padding: 30px 0 64px;
+}
+
+.event-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.event-copy {
+  display: grid;
+  gap: 16px;
+  color: var(--white);
+}
+
+.event-copy h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.event-copy p {
+  margin: 0;
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.event-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.event-panel {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 0;
+}
+
+.event-panel h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.event-panel p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.event-panel img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  background: #111;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.event-card {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.event-card h2,
+.event-card h3 {
+  margin: 0;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.event-card ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.proof-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.proof-video {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 0;
+}
+
+.proof-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #000;
+}
+
+.proof-meta {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 0;
+}
+
+.proof-meta h2 {
+  margin: 0;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.proof-meta p {
+  margin: 0;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1040px) {
@@ -1052,8 +1480,24 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .about-hero,
+  .about-section-grid,
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-hero,
+  .event-grid,
+  .proof-section {
+    grid-template-columns: 1fr;
+  }
+
   .product-image-card {
     min-height: 520px;
+  }
+
+  .contest-transition-sheet {
+    width: min(88vw, 760px);
   }
 }
 
@@ -1140,5 +1584,23 @@ a {
 
   .bag-item-actions {
     justify-items: start;
+  }
+
+  .event-page-main {
+    width: calc(100% - 28px);
+  }
+
+  .contest-transition-sheet {
+    width: calc(100vw - 28px);
+    aspect-ratio: 1 / 1.15;
+  }
+
+  .contest-transition-panel {
+    inset: 64px 0 0;
+    padding: 16px;
+  }
+
+  .contest-transition-panel h2 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
   }
 }

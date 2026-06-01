@@ -1,6 +1,6 @@
 # Under Armour Homepage
 
-Static homepage concept inspired by Nike's retail layout and rebuilt with an Under Armour title and styling.
+Under Armour storefront demo with product pages, bag flow, and event pages.
 
 ## Files
 

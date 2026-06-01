@@ -231,7 +231,76 @@ function initBagPage() {
   renderBag();
 }
 
+function initContestLaunch() {
+  const launchLink = document.querySelector("[data-contest-transition]");
+  if (!launchLink) {
+    return;
+  }
+
+  launchLink.addEventListener("click", (event) => {
+    if (event.defaultPrevented) {
+      return;
+    }
+
+    event.preventDefault();
+    const targetHref =
+      launchLink.getAttribute("data-contest-transition") || launchLink.getAttribute("href");
+    window.sessionStorage.setItem("ua-contest-transition", "wipe");
+    window.location.href = targetHref || "shooting-contest.html";
+  });
+}
+
+function initContestTransition() {
+  if (!document.body.classList.contains("event-page")) {
+    return;
+  }
+
+  const target = window.sessionStorage.getItem("ua-contest-transition");
+  if (target !== "wipe") {
+    return;
+  }
+
+  window.sessionStorage.removeItem("ua-contest-transition");
+  document.body.classList.add("contest-transitioning");
+
+  const overlay = document.createElement("div");
+  overlay.className = "contest-transition-overlay";
+  overlay.setAttribute("aria-hidden", "true");
+
+  overlay.innerHTML = `
+    <div class="contest-transition-backdrop"></div>
+    <div class="contest-transition-sheet">
+      <div class="contest-transition-header">
+        <span>Under Armour</span>
+        <span>Shooting Contest</span>
+      </div>
+      <div class="contest-transition-panel">
+        <h2>105 Shot Challenge</h2>
+        <img
+          class="contest-transition-image"
+          src="assets/steph-curry-under-armour-sharp.jpg"
+          alt="Steph Curry in Under Armour gear"
+        />
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  window.setTimeout(() => {
+    document.body.classList.add("contest-transition-ready");
+  }, 2600);
+
+  window.setTimeout(() => {
+    overlay.remove();
+    document.body.classList.remove("contest-transitioning");
+    document.body.classList.remove("contest-transition-ready");
+  }, 5000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initProductPage();
   initBagPage();
+  initContestLaunch();
+  initContestTransition();
 });
