@@ -170,7 +170,7 @@ a {
 
 .hero-image {
   min-height: clamp(440px, 63vw, 780px);
-  background-image: url("assets/hero-training.png");
+  background-image: url("assets/steph-curry-under-armour.jpg");
   background-position: center;
   background-size: cover;
 }
