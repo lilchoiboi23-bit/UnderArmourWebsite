@@ -1030,6 +1030,15 @@ a {
   background: #f4f4f4;
 }
 
+.about-hero-video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center top;
+  background: #111111;
+  display: block;
+}
+
 .about-hero-copy {
   display: grid;
   gap: 8px;
